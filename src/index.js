@@ -81,7 +81,7 @@ export async function run() {
 
     let tmateExecutable = "tmate"
     if (core.getInput("install-dependencies") !== "false") {
-      core.debug("Installing dependencies")
+      core.info("Installing dependencieszzz")
       if (process.platform === "darwin") {
         await execShellCommand('brew install tmate');
       } else if (process.platform === "win32") {
@@ -89,7 +89,7 @@ export async function run() {
       } else {
         const optionalSudoPrefix = useSudoPrefix() ? "sudo " : "";
         const distro = await getLinuxDistro();
-        core.debug("linux distro: [" + distro + "]");
+        core.info("linux distrooo: [" + distro + "]");
         if (distro === "alpine") {
           // for set -e workaround, we need to install bash because alpine doesn't have it
           await execShellCommand(optionalSudoPrefix + 'apk add openssh-client xz bash');
